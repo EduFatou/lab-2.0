@@ -2,15 +2,15 @@ import { Link } from 'react-router-dom';
 import { Carousel } from 'react-bootstrap';
 import imgFijas from '../../../../assets/fijas3.png';
 import imgFerulas from '../../../../assets/ferula.jpg';
-import imgImplantes from '../../../../assets/implante.jpg';
+import imgImplantes from '../../../../assets/implante1.jpg';
 import imgRemovibles from '../../../../assets/removible.jpg';
 
 const CategoriesList = () => {
   const categories = [
-    { name: 'Fijas', img: `${imgFijas}`},
-    { name: 'Implantes', img: `${imgImplantes}`},
-    { name: 'Férulas', img: `${imgFerulas}`},
-    { name: 'Removibles', img: `${imgRemovibles}`},
+    { name: 'Fijas', img: imgFijas },
+    { name: 'Implantes', img: imgImplantes },
+    { name: 'Férulas', img: imgFerulas },
+    { name: 'Removibles', img: imgRemovibles },
   ];
 
   return (
@@ -36,5 +36,3 @@ const CategoriesList = () => {
 };
 
 export default CategoriesList;
-
-
