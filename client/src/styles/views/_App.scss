@@ -1,0 +1,32 @@
+@import '../utils/variables.scss';
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-image: url('../assets/background.jpg');
+    background-repeat: no-repeat;
+    background-position: 50% 0;
+    background-size: cover;
+}
+
+.btn {
+    margin: 8px;
+    background-color: $color3;
+    border: none;
+
+    &:hover {
+        background-color: $color2;
+    }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    text-align: center;
+}
