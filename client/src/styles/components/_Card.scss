@@ -4,10 +4,13 @@
 .card {
   background-color: $alice-blue;
   margin: 10px;
+  
 
   .card-body {
     background-color: $alice-blue;
     color: $coal;
-
+    justify-content: center;
+    text-align: center;
+    padding: 10px;
   }
 }

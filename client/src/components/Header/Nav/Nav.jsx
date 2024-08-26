@@ -1,15 +1,43 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import { Navbar, Nav, Form, FormControl, Button, Offcanvas } from 'react-bootstrap';
+import React, { useState, useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { Navbar, Nav, Form, FormControl, Button, Offcanvas, ListGroup } from 'react-bootstrap';
 import logo from '../../../../public/diente.png';
+
+const data = [
+  { id: 1, name: "Producto 1", category: "Categoria 1", keywords: ["dental", "limpieza"] },
+  { id: 2, name: "Producto 2", category: "Categoria 2", keywords: ["ortodoncia", "brackets"] },
+];
 
 const Navigation = () => {
   const [show, setShow] = useState(false);
   const [showSearch, setShowSearch] = useState(false);
+  const [searchTerm, setSearchTerm] = useState("");
+  const [searchResults, setSearchResults] = useState([]);
+  const navigate = useNavigate();
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   const toggleSearch = () => setShowSearch(!showSearch);
+
+  useEffect(() => {
+    if (searchTerm) {
+      const results = data.filter(item => 
+        item.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        item.category.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        item.keywords.some(keyword => keyword.toLowerCase().includes(searchTerm.toLowerCase()))
+      );
+      setSearchResults(results);
+    } else {
+      setSearchResults([]);
+    }
+  }, [searchTerm]);
+
+  const handleSearch = (e) => {
+    e.preventDefault();
+    navigate(`/search?q=${searchTerm}`);
+    setSearchTerm("");
+    setSearchResults([]);
+  };
 
   return (
     <>
@@ -25,7 +53,7 @@ const Navigation = () => {
           <span className="d-none d-md-inline">Laboratorio Dental Monzón</span>
         </Navbar.Brand>
         <div className="d-flex ms-auto me-2 align-items-center">
-          <Form className="d-none d-md-flex align-items-center">
+          <Form className="d-none d-md-flex align-items-center" onSubmit={handleSearch}>
             <FormControl
               type="search"
               placeholder="Buscar"
@@ -33,8 +61,10 @@ const Navigation = () => {
               size="sm"
               aria-label="Search"
               style={{height: '38px'}}
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
             />
-            <Button variant="outline-light">Buscar</Button>
+            <Button variant="outline-light" type="submit">Buscar</Button>
           </Form>
           <Button
             variant="outline-light"
@@ -70,15 +100,30 @@ const Navigation = () => {
         </Navbar.Offcanvas>
       </Navbar>
       {showSearch && (
-        <Form className="d-md-none p-2 form">
+        <Form className="d-md-none p-2 form" onSubmit={handleSearch}>
           <FormControl
             type="search"
             placeholder="Buscar"
             className="me-2 mb-2"
             aria-label="Search"
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
           />
-          <Button variant="outline-primary">Buscar</Button>
+          <Button variant="outline-primary" type="submit">Buscar</Button>
         </Form>
+      )}
+      {searchResults.length > 0 && (
+        <ListGroup className="position-absolute w-100 mt-1">
+          {searchResults.map(result => (
+            <ListGroup.Item key={result.id} action onClick={() => {
+              navigate(`/product/${result.id}`);
+              setSearchTerm("");
+              setSearchResults([]);
+            }}>
+              {result.name} - {result.category}
+            </ListGroup.Item>
+          ))}
+        </ListGroup>
       )}
     </>
   );

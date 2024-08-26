@@ -25,7 +25,7 @@ const CategoriesList = () => {
                 alt={category.name}
               />
               <Carousel.Caption>
-                <h3>{category.name}</h3>
+                <h2>{category.name}</h2>
               </Carousel.Caption>
             </Link>
           </Carousel.Item>
