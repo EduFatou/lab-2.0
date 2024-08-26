@@ -1,17 +1,17 @@
 import React, { useState } from 'react';
 import { Card as BootstrapCard, Modal, Button } from 'react-bootstrap';
-import imgCoronaZirconio from '../../../../assets/corona-zirconio.jpg';
-import imgCoronaDisilicato from '../../../../assets/corona-disilicato.jpg';
-import imgCoronaMetalSintetizado from '../../../../assets/corona-metal-sintetizado.jpg';
-import imgEstructuraEsqueletica from '../../../../assets/estructura-esqueletica.jpg';
-import imgDentaduraParcial from '../../../../assets/dentadura-parcial.jpg';
-import imgDentaduraCompleta from '../../../../assets/dentadura-completa.jpg';
-import imgProtesisHibrida from '../../../../assets/protesis-hibrida.jpg';
-import imgAtornillado from '../../../../assets/atornillado.jpg';
-import imgSobreDentadura from '../../../../assets/sobre-dentadura.jpg';
-import imgFerulaDescarga from '../../../../assets/ferula-descarga.jpg';
-import imgFerulaBlanqueamiento from '../../../../assets/ferula-blanqueamiento.jpg';
-import imgFerulaMantenimiento from '../../../../assets/ferula-mantenimiento.jpg';
+import imgCoronaZirconio from '../../../../../../assets/corona-zirconio.jpg';
+import imgCoronaDisilicato from '../../../../../../assets/corona-disilicato.jpg';
+import imgCoronaMetalSintetizado from '../../../../../../assets/corona-metal-sintetizado.jpg';
+import imgEstructuraEsqueletica from '../../../../../../assets/estructura-esqueletica.jpg';
+import imgDentaduraParcial from '../../../../../../assets/dentadura-parcial.jpg';
+import imgDentaduraCompleta from '../../../../../../assets/dentadura-completa.jpg';
+import imgProtesisHibrida from '../../../../../../assets/protesis-hibrida.jpg';
+import imgAtornillado from '../../../../../../assets/atornillado.jpg';
+import imgSobreDentadura from '../../../../../../assets/sobre-dentadura.jpg';
+import imgFerulaDescarga from '../../../../../../assets/ferula-descarga.jpg';
+import imgFerulaBlanqueamiento from '../../../../../../assets/ferula-blanqueamiento.jpg';
+import imgFerulaMantenimiento from '../../../../../../assets/ferula-mantenimiento.jpg';
 
 const CardList = ({ category }) => {
   const [selectedProduct, setSelectedProduct] = useState(null);
@@ -48,7 +48,7 @@ const CardList = ({ category }) => {
           <BootstrapCard.Body>
             <BootstrapCard.Title>{product.product_name}</BootstrapCard.Title>
             <BootstrapCard.Text>{product.description}</BootstrapCard.Text>
-            <BootstrapCard.Text>Precio: {product.price}</BootstrapCard.Text>
+            {/* <BootstrapCard.Text>Precio: {product.price}</BootstrapCard.Text> */}
           </BootstrapCard.Body>
         </BootstrapCard>
       ))}
