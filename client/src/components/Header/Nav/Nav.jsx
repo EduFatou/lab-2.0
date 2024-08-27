@@ -85,7 +85,7 @@ const Navigation = () => {
         <Navbar.Offcanvas
           id="offcanvasNavbar"
           aria-labelledby="offcanvasNavbarLabel"
-          placement="end"
+          placement="top"
           show={show}
           onHide={handleClose}
           className="custom-offcanvas"
@@ -96,7 +96,7 @@ const Navigation = () => {
             </Offcanvas.Title>
           </Offcanvas.Header>
           <Offcanvas.Body>
-            <Nav className="justify-content-end flex-grow-1 pe-3">
+            <Nav className="text-center flex-grow-1 pe-3">
               <Nav.Link as={Link} to="/" onClick={handleClose}>Home</Nav.Link>
               <Nav.Link as={Link} to="/categorias" onClick={handleClose}>Categorías</Nav.Link>
               <Nav.Link as={Link} to="/equipo" onClick={handleClose}>Equipo</Nav.Link>
