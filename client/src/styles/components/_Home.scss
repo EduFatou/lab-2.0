@@ -10,37 +10,50 @@
   .login-section {
     padding: 20px;
     text-align: center;
-  
+
     h3 {
       margin: 10px;
       font-size: 1em;
       color: $dark-blue;
     }
+
     p {
       margin: 40px;
       color: $dark-blue;
     }
   }
-  
-  .contact-section {
+
+  .contact-container {
+    display: flex;
+    flex-direction: row;
+
     text-align: center;
-    .map-container {
-      iframe {
-        width: 100%;
-      }
+    font-weight: bold;
+    color: $dark-blue;
+    // padding: 20px;
+    // margin: 40px;
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    div {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      flex: 1; // Hace que cada div ocupe un espacio igual
+      max-width: 15%; // Limita el ancho de cada div al 33.33% del contenedor
+      
     }
 
-    p {
-      font-weight: bold;
-      color: $dark-blue;
-    }
-    a {
-      font-weight: bold;
-      text-decoration: none;
-    }
-  
   }
 
+}
+
+.map-container {
+  iframe {
+    width: 100%;
+  }
 }
 
 .marquee-container {
@@ -61,4 +74,3 @@
   height: 50px;
   margin: 0 20px;
 }
-

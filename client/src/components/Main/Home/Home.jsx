@@ -32,13 +32,13 @@ const Home = () => {
       <section className="home">
         <article>
           <CategoriesList />
-          <div className="login-section">
+          <section className="login-section">
             <h3>Bienvenid@ a Laboratorio Dental Monzón</h3>
             <p>
               Laboratorio Dental Monzón, donde transformamos sonrisas utilizando las últimas tecnologías y el conocimiento experto de nuestro equipo. Destacamos por ofrecer precios competitivos y resultados excelentes, garantizando la satisfacción de nuestros clientes.
             </p>
-          </div>
-          <div className="marquee-container">
+          </section>
+          <section className="marquee-container">
             <Marquee
               className="marquee"
               autoFill={true}
@@ -58,15 +58,23 @@ const Home = () => {
               <img src={logo6} alt="Itero Logo" className="marquee-logo" />
               <img src={logo7} alt="Sirona Logo" className="marquee-logo" />
             </Marquee>
-          </div>
-          <div className='contact-section'>
-            <p>Conócenos en Sevilla, Calle Monzón, local bajo 6H.</p>
-            <p>Teléfono: +34 652 018 478</p>
-            <a href="mailto:laboratoriodentalmonzon@gmail.com">laboratoriodentalmonzon@gmail.com</a>
+          </section>
+          <section className='contact-section'>
+            <div className='contact-container'>
+              <div>
+                <p>Conócenos en Sevilla, Calle Monzón, local bajo 6H.</p>
+              </div>
+              <div>
+                <p>Teléfono: +34 652 018 478</p>
+              </div>
+              <div>
+                <a href="mailto:laboratoriodentalmonzon@gmail.com">laboratoriodentalmonzon@gmail.com</a>
+              </div>
+            </div>
             <div className='map-container'>
               <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3171.208251575949!2d-5.985801400000038!3d37.361248999999994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd126c2ae39984d3%3A0xef958880c6c9fa63!2sC.%20Monz%C3%B3n%2C%206%2C%2041012%20Sevilla!5e0!3m2!1ses!2ses!4v1721570125901!5m2!1ses!2ses" allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
             </div>
-          </div>
+          </section>
         </article>
       </section>
     </>

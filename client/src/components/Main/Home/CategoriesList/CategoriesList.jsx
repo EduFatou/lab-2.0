@@ -15,7 +15,7 @@ const CategoriesList = () => {
                 src={category.img}
                 alt={category.name}
               />
-              <Carousel.Caption>
+              <Carousel.Caption className='carousel-title'>
                 <h2>{category.name}</h2>
               </Carousel.Caption>
             </Link>

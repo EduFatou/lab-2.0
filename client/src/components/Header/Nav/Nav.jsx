@@ -95,8 +95,8 @@ const Navigation = () => {
               Menú
             </Offcanvas.Title>
           </Offcanvas.Header>
-          <Offcanvas.Body>
-            <Nav className="text-center flex-grow-1 pe-3">
+          <Offcanvas.Body className="d-flex flex-column justify-content-center">
+            <Nav className="text-center flex-grow-1">
               <Nav.Link as={Link} to="/" onClick={handleClose}>Home</Nav.Link>
               <Nav.Link as={Link} to="/categorias" onClick={handleClose}>Categorías</Nav.Link>
               <Nav.Link as={Link} to="/equipo" onClick={handleClose}>Equipo</Nav.Link>

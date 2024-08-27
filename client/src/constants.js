@@ -18,7 +18,10 @@ import imgFerulas from './assets/ferula.jpg';
 import imgImplantes from './assets/implante1.jpg';
 import imgRemovibles from './assets/removible.jpg';
 
-
+import imgEduardo from './assets/eduardo1.jpg';
+import imgJuanma from './assets/juanma1.jpeg';
+import imgJuan from './assets/juan1.jpeg';
+import imgGerman from './assets/german.png';
 
 export const productList = [
   { product_id: 1, product_name: 'Corona de zirconio', price: 100, description: 'Descubre la resistencia del zirconio monolítico, perfecto para restauraciones impecables tanto en el sector posterior como anterior.', category: 'Fijas', images: [imgCoronaZirconio1, imgCoronaZirconio2, imgCoronaZirconio3] },
@@ -40,4 +43,35 @@ export const categories = [
   { name: 'Implantes', img: imgImplantes },
   { name: 'Férulas', img: imgFerulas },
   { name: 'Removibles', img: imgRemovibles },
+];
+
+export const equipoData = [
+  {
+    id: 1,
+    name: 'Eduardo Fatou',
+    role: 'Especialista en prótesis completa de alto impacto y cerámica multicromática.',
+    description: 'Con más de 35 años de experiencia, su profundo conocimiento y habilidades refinadas le permiten ajustar cada prótesis con precisión milimétrica, asegurando una integración perfecta y una apariencia natural.',
+    imgUrl: imgEduardo
+  },
+  {
+    id: 2,
+    name: 'Juan Manuel García',
+    role: 'Especialista en diseño digital, zirconio y disilicato.',
+    description: 'Su enfoque innovador y meticuloso asegura que cada prótesis se ajuste perfectamente y cumpla con los más altos estándares de durabilidad y estética.',
+    imgUrl: imgJuanma
+  },
+  {
+    id: 3,
+    name: 'Germán Pérez',
+    role: 'Especialista en diseño digital, nuevas tecnologías y cerámica estratificada.',
+    description: 'Pionero en la implementación de nuevas tecnologías. Su habilidad para integrar técnicas avanzadas con materiales de última generación garantiza resultados excepcionales.',
+    imgUrl: imgGerman
+  },
+  {
+    id: 4,
+    name: 'Juan Díaz',
+    role: 'Especialista en diseño digital, alta estética en cerámica dental, zirconio, disilicato y carillas.',
+    description: 'Su pasión por la estética y su dominio de las tecnologías digitales aseguran prótesis de calidad superior, brindando sonrisas naturales y deslumbrantes.',
+    imgUrl: imgJuan
+  }
 ];
