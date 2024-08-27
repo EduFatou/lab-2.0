@@ -1,18 +1,9 @@
 import { Link } from 'react-router-dom';
 import { Carousel } from 'react-bootstrap';
-import imgFijas from '../../../../assets/fijas3.png';
-import imgFerulas from '../../../../assets/ferula.jpg';
-import imgImplantes from '../../../../assets/implante1.jpg';
-import imgRemovibles from '../../../../assets/removible.jpg';
+import { categories } from '../../../../constants';
 
 const CategoriesList = () => {
-  const categories = [
-    { name: 'Fijas', img: imgFijas },
-    { name: 'Implantes', img: imgImplantes },
-    { name: 'Férulas', img: imgFerulas },
-    { name: 'Removibles', img: imgRemovibles },
-  ];
-
+  
   return (
     <section className='categories'>
       <Carousel className="categories-carousel shadow">

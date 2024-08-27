@@ -1,30 +1,35 @@
 import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { Navbar, Nav, Form, FormControl, Button, Offcanvas, ListGroup } from 'react-bootstrap';
+import { Navbar, Nav, Form, FormControl, Button, Offcanvas, ListGroup, Modal, Carousel } from 'react-bootstrap';
 import logo from '../../../../public/diente.png';
-
-const data = [
-  { id: 1, name: "Producto 1", category: "Categoria 1", keywords: ["dental", "limpieza"] },
-  { id: 2, name: "Producto 2", category: "Categoria 2", keywords: ["ortodoncia", "brackets"] },
-];
+import { productList } from "../../../constants";
 
 const Navigation = () => {
   const [show, setShow] = useState(false);
   const [showSearch, setShowSearch] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
   const [searchResults, setSearchResults] = useState([]);
+  const [selectedProduct, setSelectedProduct] = useState(null);
+  const [showModal, setShowModal] = useState(false);
   const navigate = useNavigate();
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   const toggleSearch = () => setShowSearch(!showSearch);
 
+  const handleCloseModal = () => setShowModal(false);
+  const handleShowModal = (product) => {
+    setSelectedProduct(product);
+    setShowModal(true);
+    setSearchResults([]); // Limpiar la lista de resultados al hacer clic en un producto
+  };
+
   useEffect(() => {
     if (searchTerm) {
-      const results = data.filter(item => 
-        item.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      const results = productList.filter(item => 
+        item.product_name.toLowerCase().includes(searchTerm.toLowerCase()) ||
         item.category.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        item.keywords.some(keyword => keyword.toLowerCase().includes(searchTerm.toLowerCase()))
+        item.description.toLowerCase().includes(searchTerm.toLowerCase())
       );
       setSearchResults(results);
     } else {
@@ -99,6 +104,7 @@ const Navigation = () => {
           </Offcanvas.Body>
         </Navbar.Offcanvas>
       </Navbar>
+      
       {showSearch && (
         <Form className="d-md-none p-2 form" onSubmit={handleSearch}>
           <FormControl
@@ -112,18 +118,49 @@ const Navigation = () => {
           <Button variant="outline-primary" type="submit">Buscar</Button>
         </Form>
       )}
+      
       {searchResults.length > 0 && (
-        <ListGroup className="position-absolute w-100 mt-1">
+        <ListGroup 
+          className="position-absolute w-100 mt-1 search-results-list" 
+          style={{ zIndex: 1050 }}
+        >
           {searchResults.map(result => (
-            <ListGroup.Item key={result.id} action onClick={() => {
-              navigate(`/product/${result.id}`);
-              setSearchTerm("");
-              setSearchResults([]);
-            }}>
-              {result.name} - {result.category}
+            <ListGroup.Item 
+              key={result.product_id} 
+              action 
+              onClick={() => handleShowModal(result)}
+            >
+              {result.product_name} - {result.category}
             </ListGroup.Item>
           ))}
         </ListGroup>
+      )}
+      
+      {selectedProduct && (
+        <Modal show={showModal} onHide={handleCloseModal} className='modal'>
+          <Modal.Header closeButton>
+            <Modal.Title>{selectedProduct.product_name}</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <Carousel>
+              {selectedProduct.images.map((image, index) => (
+                <Carousel.Item key={index}>
+                  <img
+                    className="d-block w-100 fixed-size-img"
+                    src={image}
+                    alt={`${selectedProduct.product_name} - imagen ${index + 1}`}
+                  />
+                </Carousel.Item>
+              ))}
+            </Carousel>
+            <p className="mt-3">{selectedProduct.description}</p>
+          </Modal.Body>
+          <Modal.Footer>
+            <Button variant="secondary" onClick={handleCloseModal}>
+              Cerrar
+            </Button>
+          </Modal.Footer>
+        </Modal>
       )}
     </>
   );

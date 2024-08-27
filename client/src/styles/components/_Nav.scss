@@ -47,3 +47,12 @@
     }
   }
 }
+
+.search-results-list {
+  max-height: 250px; 
+  overflow-y: auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.355);
+  background-color: white;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+}

@@ -1,0 +1,25 @@
+@import '../utils/mixins.scss';
+@include spinner;
+
+.card-categories {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin: 5% 10%;
+}
+
+.card-categories>* {
+    flex: 1 1 250px;
+    max-width: 100%;
+}
+
+.card-categories .card-img {
+    height: 200px;
+    object-fit: cover;
+    width: 100%;
+}
+
+.card-categories .card-category-title {
+    text-decoration: none;
+}
