@@ -1,5 +1,5 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import CardList from './CardList';
 
 const Category = () => {
@@ -7,6 +7,11 @@ const Category = () => {
 
   return (
     <section className='category'>
+      <h3>
+        <Link to="/categorias" style={{ textDecoration: 'none', color: 'inherit' }}>
+          categorías/
+        </Link>
+      </h3>
       <h1>{category}</h1>
       <CardList category={category} />
     </section>

@@ -41,10 +41,10 @@ export const productList = [
 ];
 
 export const categories = [
-  { name: 'Fijas', src: videoFijas, type: 'video' },
-  { name: 'Implantes', src: videoImplantes, type: 'video' },
-  { name: 'Férulas', src: imgFerulas, type: 'image' },
-  { name: 'Removibles', src: imgRemovibles, type: 'image' },
+  { name: 'Fijas', src: videoFijas, img: imgFijas, type: 'video' },
+  { name: 'Implantes', src: videoImplantes, img: imgImplantes, type: 'video' },
+  { name: 'Férulas', src: imgFerulas, img: imgFerulas, type: 'image' },
+  { name: 'Removibles', src: imgRemovibles, img: imgRemovibles, type: 'image' },
 ];
 
 export const equipoData = [

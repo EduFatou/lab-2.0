@@ -1,11 +1,12 @@
-import React, { useState } from 'react';
-import { Card as BootstrapCard, Modal, Button, Carousel } from 'react-bootstrap';
+import React, { useState, useEffect } from 'react';
+import { Card as BootstrapCard, Modal, Carousel } from 'react-bootstrap';
+import { Hourglass } from 'react-loader-spinner';
 import { productList } from '../../../../../../constants';
-
 
 const CardList = ({ category }) => {
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [show, setShow] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   const handleClose = () => setShow(false);
   const handleShow = (product) => {
@@ -14,6 +15,42 @@ const CardList = ({ category }) => {
   };
 
   const filteredProducts = productList.filter(product => product.category === category);
+
+  useEffect(() => {
+    const imagePromises = filteredProducts.flatMap(product => 
+      product.images.map(src => 
+        new Promise((resolve, reject) => {
+          const img = new Image();
+          img.src = src;
+          img.onload = resolve;
+          img.onerror = reject;
+        })
+      )
+    );
+
+    Promise.all(imagePromises)
+      .then(() => setLoading(false))
+      .catch(error => {
+        console.error('Error loading images:', error);
+        setLoading(false);
+      });
+  }, [category]);
+
+  if (loading) {
+    return (
+      <div className="spinner-overlay">
+        <div className="spinner-container">
+          <Hourglass
+            visible={true}
+            height="80"
+            width="80"
+            ariaLabel="hourglass-loading"
+            colors={['#306cce', '#72a1ed']}
+          />
+        </div>
+      </div>
+    );
+  }
 
   return (
     <section className='card-list'>
@@ -47,11 +84,6 @@ const CardList = ({ category }) => {
             </Carousel>
             <p className="mt-3">{selectedProduct.description}</p>
           </Modal.Body>
-          <Modal.Footer>
-            <Button variant="secondary" onClick={handleClose}>
-              Cerrar
-            </Button>
-          </Modal.Footer>
         </Modal>
       )}
     </section>

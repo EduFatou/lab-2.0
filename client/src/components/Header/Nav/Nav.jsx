@@ -21,7 +21,7 @@ const Navigation = () => {
   const handleShowModal = (product) => {
     setSelectedProduct(product);
     setShowModal(true);
-    setSearchResults([]); // Limpiar la lista de resultados al hacer clic en un producto
+    setSearchResults([]);
   };
 
   useEffect(() => {
@@ -155,11 +155,6 @@ const Navigation = () => {
             </Carousel>
             <p className="mt-3">{selectedProduct.description}</p>
           </Modal.Body>
-          <Modal.Footer>
-            <Button variant="secondary" onClick={handleCloseModal}>
-              Cerrar
-            </Button>
-          </Modal.Footer>
         </Modal>
       )}
     </>
