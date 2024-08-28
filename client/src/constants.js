@@ -14,9 +14,11 @@ import imgFerulaBlanqueamiento1 from './assets/ferula-blanqueamiento.jpg';
 import imgFerulaMantenimiento1 from './assets/ferula-mantenimiento.jpg';
 
 import imgFijas from './assets/fijas3.png';
-import imgFerulas from './assets/ferula.jpg';
+import imgFerulas from './assets/ferula1.jpg';
 import imgImplantes from './assets/implante1.jpg';
 import imgRemovibles from './assets/removible.jpg';
+import videoFijas from './assets/fijas.mp4';
+import videoImplantes from './assets/implante1.mp4';
 
 import imgEduardo from './assets/eduardo1.jpg';
 import imgJuanma from './assets/juanma1.jpeg';
@@ -39,10 +41,10 @@ export const productList = [
 ];
 
 export const categories = [
-  { name: 'Fijas', img: imgFijas },
-  { name: 'Implantes', img: imgImplantes },
-  { name: 'Férulas', img: imgFerulas },
-  { name: 'Removibles', img: imgRemovibles },
+  { name: 'Fijas', src: videoFijas, type: 'video' },
+  { name: 'Implantes', src: videoImplantes, type: 'video' },
+  { name: 'Férulas', src: imgFerulas, type: 'image' },
+  { name: 'Removibles', src: imgRemovibles, type: 'image' },
 ];
 
 export const equipoData = [

@@ -85,7 +85,7 @@ const Navigation = () => {
         <Navbar.Offcanvas
           id="offcanvasNavbar"
           aria-labelledby="offcanvasNavbarLabel"
-          placement="top"
+          placement="end"
           show={show}
           onHide={handleClose}
           className="custom-offcanvas"

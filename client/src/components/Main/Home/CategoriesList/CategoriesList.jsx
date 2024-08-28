@@ -10,11 +10,23 @@ const CategoriesList = () => {
         {categories.map((category, index) => (
           <Carousel.Item key={index}>
             <Link to={`/categorias/${category.name}`} className="category-card">
-              <img
-                className="d-block w-100 fixed-size-img"
-                src={category.img}
-                alt={category.name}
-              />
+            {category.type === 'video' ? (
+                <video
+                  className="d-block w-100 fixed-size-img"
+                  src={category.src}
+                  alt={category.name}
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                />
+              ) : (
+                <img
+                  className="d-block w-100 fixed-size-img"
+                  src={category.src}
+                  alt={category.name}
+                />
+              )}
               <Carousel.Caption className='carousel-title'>
                 <h2>{category.name}</h2>
               </Carousel.Caption>
