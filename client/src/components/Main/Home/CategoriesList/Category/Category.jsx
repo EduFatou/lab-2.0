@@ -7,11 +7,11 @@ const Category = () => {
 
   return (
     <section className='category'>
-      <h3>
+      <h5>
         <Link to="/categorias" style={{ textDecoration: 'none', color: 'inherit' }}>
-          categorías/
+          Volver a las Categorías
         </Link>
-      </h3>
+      </h5>
       <h1>{category}</h1>
       <CardList category={category} />
     </section>

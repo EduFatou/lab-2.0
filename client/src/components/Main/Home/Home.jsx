@@ -50,77 +50,80 @@ const Home = () => {
 
   return (
     <section className="home">
-        <article>
-          <section className="login-section">
+      <article>
+        <section className="login-section">
           <div className="video-background">
-              <video autoPlay loop muted playsInline className="background-video">
-                <source src={videoimplantes} type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
-            </div>
-            <div className="content-overlay">
-              <h2>Bienvenid@ a Laboratorio Dental Monzón</h2>
-              <p>
-                Un laboratorio de más de 40 años de experiencia, donde transformamos sonrisas utilizando las últimas tecnologías y el conocimiento experto de nuestro equipo. Destacamos por ofrecer precios competitivos y resultados excelentes, garantizando la satisfacción de nuestros clientes.
-              </p>
-            </div>
-          </section>
-          <section className="marquee-container">
-            <Marquee
-              // className="marquee"
-              // autoFill={true}
-              speed={40}
-              direction="left"
-              play={true}
-              pauseOnHover={true}
-              gradient={true}
-              gradientColor={[240, 240, 240]}
-              gradientWidth={300}>
+            <video autoPlay loop muted playsInline className="background-video">
+              <source src={videoimplantes} type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <div className="content-overlay">
+            <h2>Bienvenid@ a Laboratorio Dental Monzón</h2>
+            <p>
+              Un laboratorio de más de 40 años de experiencia, donde transformamos sonrisas utilizando las últimas tecnologías y el conocimiento experto de nuestro equipo. Destacamos por ofrecer precios competitivos y resultados excelentes, garantizando la satisfacción de nuestros clientes.
+            </p>
+          </div>
+        </section>
+        <section className="marquee-container">
+          <h2>Nuestras Marcas</h2>
+          <Marquee
+            className="marquee"
+            autoFill={true}
+            speed={20}
+            direction="left"
+            play={true}
+            pauseOnHover={true}
+            gradient={true}
+            gradientColor={[255, 255, 255]}
+            gradientWidth={300}>
 
-              <img src={logo1} alt="3M Logo" className="marquee-logo" />
-              <img src={logo2} alt="3shape Logo" className="marquee-logo" />
-              <img src={logo3} alt="AVVBDA Logo" className="marquee-logo" />
-              <img src={logo4} alt="Carestream Logo" className="marquee-logo" />
-              <img src={logo5} alt="Dental Wings Logo" className="marquee-logo" />
-              <img src={logo6} alt="Itero Logo" className="marquee-logo" />
-              <img src={logo7} alt="Sirona Logo" className="marquee-logo" />
-            </Marquee>
-          </section>
-          <Categories />
-          <section className="contact-section">
-            <div className="contact-container">
-              <div>
-                <h4>Ubicación</h4>
-                <p><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-geo-alt-fill" viewBox="0 0 16 16">
-                  <path d="M12 5.5c0 3.866-6 10.5-6 10.5S0 9.366 0 5.5a6 6 0 1 1 12 0zM6 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z" />
-                </svg> Calle Monzón, local bajo 6H, Sevilla</p>
-              </div>
-              <div>
-                <h4>Contacto</h4>
-                <p><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-telephone-fill" viewBox="0 0 16 16">
-                  <path fillRule="evenodd" d="M3.654 1.328a.678.678 0 0 1 1.015-.063L6.29 2.52c.329.329.445.774.312 1.187a1.745 1.745 0 0 1-.547.808l-.252.253a1.745 1.745 0 0 0 0 2.469l3.75 3.75a1.745 1.745 0 0 0 2.469 0l.253-.252c.33-.33.742-.463 1.187-.312l1.25.623c.414.207.879.095 1.188-.214l1.234-1.233c.168-.168.26-.395.26-.626 0-1.285-.476-2.547-1.346-3.418L10.9 2.546C10.29 1.935 9.377 1.502 8.387 1.375 7.444 1.258 6.496 1.478 5.68 1.91L4.79 2.427a.678.678 0 0 1-.81-.085L3.67 1.69a.678.678 0 0 1-.016-.361zM10.59 15.44c-.482.337-1.05.528-1.636.528-.95 0-1.851-.43-2.498-1.078L2.56 10.561a6.13 6.13 0 0 1-1.08-2.497c-.019-.487.123-.957.388-1.365.264-.407.658-.743 1.121-.982L6.5 3.75a1.745 1.745 0 0 1 1.906.439l1.03 1.03c.569.57 1.525 1.526 2.096 2.096l.93.93c.22.22.347.514.367.819.018.293-.04.58-.164.832-.116.235-.34.42-.605.51l-1.134.378z" />
-                </svg> +34 652 018 478</p>
-                <a href="mailto:laboratoriodentalmonzon@gmail.com"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-envelope-fill" viewBox="0 0 16 16">
-                  <path d="M.05 3.555A2 2 0 0 1 2 3h12a2 2 0 0 1 1.95 2.555l-6.777 4.11a1.5 1.5 0 0 1-1.346 0L.05 3.555z" />
-                  <path d="M0 4.697v7.104l5.803-3.518L0 4.697z" />
-                  <path d="M10.197 8.283 16 11.8V4.697l-5.803 3.586z" />
-                  <path d="M1.803 12.445A2 2 0 0 0 2 13h12a2 2 0 0 0 1.803-1.555L8 8.354l-6.197 4.09z" />
-                </svg> laboratoriodentalmonzon@gmail.com</a>
-              </div>
-              <div>
-                <h4>Horario</h4>
-                <p><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-clock-fill" viewBox="0 0 16 16">
-                  <path d="M8 3.5a.5.5 0 0 1 .5.5v4.75h4.5a.5.5 0 0 1 0 1H7.5V4a.5.5 0 0 1 .5-.5z" />
-                  <path d="M8 1a7 7 0 1 0 7 7A7 7 0 0 0 8 1zm0 1a6 6 0 1 1-6 6A6 6 0 0 1 8 2z" />
-                </svg> Lunes - Viernes: 9:00 AM - 6:00 PM</p>
-              </div>
+            <img src={logo1} alt="3M Logo" className="marquee-logo" />
+            <img src={logo2} alt="3shape Logo" className="marquee-logo" />
+            <img src={logo3} alt="AVVBDA Logo" className="marquee-logo" />
+            <img src={logo4} alt="Carestream Logo" className="marquee-logo" />
+            <img src={logo5} alt="Dental Wings Logo" className="marquee-logo" />
+            <img src={logo6} alt="Itero Logo" className="marquee-logo" />
+            <img src={logo7} alt="Sirona Logo" className="marquee-logo" />
+          </Marquee>
+        </section>
+        <Categories />
+        <section className="contact-section">
+          <div className="contact-container">
+            <div>
+              <h4>Ubicación  <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="red" class="size-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
+              </svg></h4>
+              <p>
+                Calle Monzón, local bajo 6H</p>
+              <p>Sevilla 41012</p>
             </div>
-            <div className="map-container">
-              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3171.208251575949!2d-5.985801400000038!3d37.361248999999994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd126c2ae39984d3%3A0xef958880c6c9fa63!2sC.%20Monz%C3%B3n%2C%206%2C%2041012%20Sevilla!5e0!3m2!1ses!2ses!4v1721570125901!5m2!1ses!2ses" allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
+            <div>
+            <a href='tel:+34652108478'><h4>Contacto  <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="green" class="size-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" />
+              </svg>
+              </h4>
+              (+34) 652 018 478</a>
+              <a href="mailto:laboratoriodentalmonzon@gmail.com">
+              laboratoriodentalmonzon@gmail.com <svg xmlns="http://www.w3.org/2000/svg" fill="none" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
+                </svg></a>
             </div>
-          </section>
-        </article>
-      </section>
+            <div>
+              <h4>Horario <svg xmlns="http://www.w3.org/2000/svg" fill="none" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+              </svg></h4>
+              <p>Lunes - Viernes:</p>
+              <p>9:00 AM - 6:00 PM</p>
+            </div>
+          </div>
+          <div className="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3171.208251575949!2d-5.985801400000038!3d37.361248999999994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd126c2ae39984d3%3A0xef958880c6c9fa63!2sC.%20Monz%C3%B3n%2C%206%2C%2041012%20Sevilla!5e0!3m2!1ses!2ses!4v1721570125901!5m2!1ses!2ses" allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </section>
+      </article>
+    </section>
   );
 };
 
