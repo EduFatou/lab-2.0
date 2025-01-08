@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import CategoriesList from './CategoriesList';
+import Categories from '../Categories';
 import { Hourglass } from 'react-loader-spinner';
 import Marquee from "react-fast-marquee";
 import logo1 from '../../../assets/marquee/3M_logo.png';
@@ -9,6 +9,8 @@ import logo4 from '../../../assets/marquee/carestream_logo.png';
 import logo5 from '../../../assets/marquee/dental-wings_logo.png';
 import logo6 from '../../../assets/marquee/Itero_logo.png';
 import logo7 from '../../../assets/marquee/Sirona_logo.png';
+
+import videoimplantes from '../../../assets/implantes.mp4';
 
 
 const Home = () => {
@@ -49,12 +51,19 @@ const Home = () => {
   return (
     <section className="home">
         <article>
-          <CategoriesList />
           <section className="login-section">
-            <h2>Bienvenid@ a Laboratorio Dental Monzón</h2>
-            <p>
-              Laboratorio Dental Monzón, donde transformamos sonrisas utilizando las últimas tecnologías y el conocimiento experto de nuestro equipo. Destacamos por ofrecer precios competitivos y resultados excelentes, garantizando la satisfacción de nuestros clientes.
-            </p>
+          <div className="video-background">
+              <video autoPlay loop muted playsInline className="background-video">
+                <source src={videoimplantes} type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <div className="content-overlay">
+              <h2>Bienvenid@ a Laboratorio Dental Monzón</h2>
+              <p>
+                Un laboratorio de más de 40 años de experiencia, donde transformamos sonrisas utilizando las últimas tecnologías y el conocimiento experto de nuestro equipo. Destacamos por ofrecer precios competitivos y resultados excelentes, garantizando la satisfacción de nuestros clientes.
+              </p>
+            </div>
           </section>
           <section className="marquee-container">
             <Marquee
@@ -77,6 +86,7 @@ const Home = () => {
               <img src={logo7} alt="Sirona Logo" className="marquee-logo" />
             </Marquee>
           </section>
+          <Categories />
           <section className="contact-section">
             <div className="contact-container">
               <div>
